@@ -1,0 +1,30 @@
+﻿{
+  "title": "IT2media.Extensions.Logging.Abstractions",
+  "copyright": "IT2media GmbH & Co. KG 2016",
+  "description": "Extension methods for IT2media.Extensions.Logging ILogger",
+  "version": "1.0.0-*",
+  "authors": [ "Markus Malz" ],
+
+  "packOptions": {
+    "summary": "Some extension methods for IT2media.Extensions.Logging ILogger",
+    "tags": [ "IT2media.Extensions.Logging", "IT2media.Extensions.Logging.Abstractions", "ILogger", "SeriLog" ],
+    "owners": [ "malzma" ],
+    "releaseNotes": "Added GetHashCodeUShort and TrimStart",
+    "iconUrl": "https://raw.githubusercontent.com/it2media/Home/master/Logo_IT2media_2015_64x64.png",
+    "projectUrl": "https://github.com/it2media/Logging",
+    "licenseUrl": "https://raw.githubusercontent.com/it2media/Logging/master/LICENSE",
+    "requireLicenseAcceptance": true,
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/it2media/Logging.git"
+    }
+  },
+
+  "frameworks": {
+    "netstandard1.1": {
+      "dependencies": {
+        "System.Runtime.InteropServices": "4.1.0-*"
+      }
+    }
+  }
+}
