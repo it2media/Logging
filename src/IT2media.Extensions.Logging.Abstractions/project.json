@@ -4,7 +4,6 @@
   "description": "Extension methods for IT2media.Extensions.Logging ILogger",
   "version": "1.0.0-*",
   "authors": [ "Markus Malz" ],
-
   "packOptions": {
     "summary": "Some extension methods for IT2media.Extensions.Logging ILogger",
     "tags": [ "IT2media.Extensions.Logging", "IT2media.Extensions.Logging.Abstractions", "ILogger", "SeriLog" ],
@@ -19,12 +18,14 @@
       "url": "https://github.com/it2media/Logging.git"
     }
   },
-
   "frameworks": {
     "netstandard1.1": {
       "dependencies": {
         "System.Runtime.InteropServices": "4.1.0-*"
       }
     }
+  },
+  "dependencies": {
+    "Microsoft.Extensions.Logging.Abstractions": "1.0.0"
   }
 }
