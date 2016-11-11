@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using IT2media.Extensions.String;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Internal;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace IT2media.Extensions.Logging.Abstractions
             }
             else
             {
-                logger.LogDebug((ushort)message.GetHashCode(), exception, message, args);
+                logger.LogDebug(message.GetHashCodeUShort(), exception, message, args);
             }
         }
 
@@ -45,7 +46,7 @@ namespace IT2media.Extensions.Logging.Abstractions
         //    }
         //    else
         //    {
-        //        logger.LogDebug((ushort)message.GetHashCode(), message, args);
+        //        logger.LogDebug(message.GetHashCodeUShort(), message, args);
         //    }
         //}
 
@@ -66,7 +67,7 @@ namespace IT2media.Extensions.Logging.Abstractions
             }
             else
             {
-                logger.LogTrace((ushort)message.GetHashCode(), exception, message, args);
+                logger.LogTrace(message.GetHashCodeUShort(), exception, message, args);
             }
         }
 
@@ -84,7 +85,7 @@ namespace IT2media.Extensions.Logging.Abstractions
         //    }
         //    else
         //    {
-        //        logger.LogTrace((ushort)message.GetHashCode(), message, args);
+        //        logger.LogTrace(message.GetHashCodeUShort(), message, args);
         //    }
         //}
 
@@ -105,7 +106,7 @@ namespace IT2media.Extensions.Logging.Abstractions
             }
             else
             {
-                logger.LogInformation((ushort)message.GetHashCode(), exception, message, args);
+                logger.LogInformation(message.GetHashCodeUShort(), exception, message, args);
             }
         }
 
@@ -123,7 +124,7 @@ namespace IT2media.Extensions.Logging.Abstractions
         //    }
         //    else
         //    {
-        //        logger.LogInformation((ushort)message.GetHashCode(), message, args);
+        //        logger.LogInformation(message.GetHashCodeUShort(), message, args);
         //    }
         //}
 
@@ -144,7 +145,7 @@ namespace IT2media.Extensions.Logging.Abstractions
             }
             else
             {
-                logger.LogWarning((ushort)message.GetHashCode(), exception, message, args);
+                logger.LogWarning(message.GetHashCodeUShort(), exception, message, args);
             }
         }
 
@@ -162,7 +163,7 @@ namespace IT2media.Extensions.Logging.Abstractions
         //    }
         //    else
         //    {
-        //        logger.LogWarning((ushort)message.GetHashCode(), message, args);
+        //        logger.LogWarning(message.GetHashCodeUShort(), message, args);
         //    }
         //}
 
@@ -183,7 +184,7 @@ namespace IT2media.Extensions.Logging.Abstractions
             }
             else
             {
-                logger.LogError((ushort)message.GetHashCode(), exception, message, args);
+                logger.LogError(message.GetHashCodeUShort(), exception, message, args);
             }
         }
 
@@ -201,7 +202,7 @@ namespace IT2media.Extensions.Logging.Abstractions
         //    }
         //    else
         //    {
-        //        logger.LogError((ushort)message.GetHashCode(), message, args);
+        //        logger.LogError(message.GetHashCodeUShort(), message, args);
         //    }
         //}
 
@@ -222,7 +223,7 @@ namespace IT2media.Extensions.Logging.Abstractions
             }
             else
             {
-                logger.LogCritical((ushort)message.GetHashCode(), exception, message, args);
+                logger.LogCritical(message.GetHashCodeUShort(), exception, message, args);
             }
         }
 
@@ -240,7 +241,7 @@ namespace IT2media.Extensions.Logging.Abstractions
         //    }
         //    else
         //    {
-        //        logger.LogCritical((ushort)message.GetHashCode(), message, args);
+        //        logger.LogCritical(message.GetHashCodeUShort(), message, args);
         //    }
         //}
     }
