@@ -1,14 +1,14 @@
 {
   "title": "IT2media.Extensions.Logging.Abstractions",
   "copyright": "IT2media GmbH & Co. KG 2016",
-  "description": "Extension methods for IT2media.Extensions.Logging ILogger",
+  "description": "Extension methods for Microsoft.Extensions.Logging Microsoft.Extensions.Logging.Abtractions ILogger. Use LogDebug, LogTrace, LogInformation, LogWarning, LogError, LogCritical without paramater EventID. The EventID is generated automatically by the GetHashCodeUShort() extension for strings based on the message string.",
   "version": "1.0.0-*",
   "authors": [ "Markus Malz" ],
   "packOptions": {
-    "summary": "Some extension methods for IT2media.Extensions.Logging ILogger",
-    "tags": [ "IT2media.Extensions.Logging", "IT2media.Extensions.Logging.Abstractions", "ILogger", "SeriLog" ],
+    "summary": "Some extension methods for Microsoft.Extensions.Logging Microsoft.Extensions.Logging.Abtractions ILogger",
+    "tags": [ "Microsoft.Extensions.Logging", "Microsoft.Extensions.Logging.Abstractions", "ILogger", "SeriLog" ],
     "owners": [ "malzma" ],
-    "releaseNotes": "Added GetHashCodeUShort and TrimStart",
+    "releaseNotes": "Added overloaded extension methods for LogDebug, LogTrace, LogInformation, LogWarning, LogError, LogCritical without paramater EventID. The EventID is generated automatically by the GetHashCodeUShort() extension for strings based on the message string.",
     "iconUrl": "https://raw.githubusercontent.com/it2media/Home/master/Logo_IT2media_2015_64x64.png",
     "projectUrl": "https://github.com/it2media/Logging",
     "licenseUrl": "https://raw.githubusercontent.com/it2media/Logging/master/LICENSE",
