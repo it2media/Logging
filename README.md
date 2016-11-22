@@ -15,7 +15,8 @@ and start logging:
    
 You never have to think about the *Microsoft.Extensions.Logging*'s **EventID** parameter anymore.
 
-The EventID is a ushort generated based on the given log message  
+The EventID is a ushort generated based on the given log message.
+  
 The GetHashCode-algorithm is based on the .NET Core implementation of the StringOrCharArray's class int returning GetHashCode-algorithm, which seems to work well considering the limitation of an EventID for the Windows-EventLog to ushort (0-65535) for backward compatibility reasons.
 
 https://github.com/it2media/String/blob/master/src/IT2media.Extensions.String/StringExtensions.cs
