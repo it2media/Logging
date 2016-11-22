@@ -1,5 +1,5 @@
 # Logging
-Extensions for ILogger in Microsoft.Extensions.Logging.Abstractions
+Extensions for the *ILogger* in *Microsoft.Extensions.Logging.Abstractions*
 
 ## Usage
 
@@ -13,6 +13,7 @@ and start logging:
    
 `_logger.LogTrace("I was here");`  
    
+You never have to think about the *Microsoft.Extensions.Logging*'s **EventID** parameter anymore.
 
 ## Sample
 
@@ -45,7 +46,14 @@ namespace WpfApplication
             {
                 //Do something
                 int1 = 42;
+
+                _logger.LogInformation("Logging an information about int1", int1);
+
+                _logger.LogDebug("Calling GetObject() now");
+
                 object1 = GetObject(int1);
+
+                _logger.LogTrace("I'm leaving the method here, bye...");
             }
             catch (Exception ex)
             {
