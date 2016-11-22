@@ -1,12 +1,12 @@
 {
   "title": "IT2media.Extensions.Logging.Abstractions",
   "copyright": "IT2media GmbH & Co. KG 2016",
-  "description": "Extension methods for Microsoft.Extensions.Logging Microsoft.Extensions.Logging.Abtractions ILogger. Use LogDebug, LogTrace, LogInformation, LogWarning, LogError, LogCritical without paramater EventID. The EventID is generated automatically by the GetHashCodeUShort() extension for strings based on the message string.",
+  "description": "Extension methods for Microsoft.Extensions.Logging Microsoft.Extensions.Logging.Abtractions ILogger. Use LogDebug, LogTrace, LogInformation, LogWarning, LogError, LogCritical without paramater EventID. The EventID is generated automatically by the GetHashCodeUShort() extension for strings based on the message or excpetion message string. Log with exceptions and params only without string message.",
   "version": "1.0.1-*",
   "authors": [ "Markus Malz" ],
   "packOptions": {
     "summary": "Some extension methods for Microsoft.Extensions.Logging Microsoft.Extensions.Logging.Abtractions ILogger",
-    "tags": [ "Microsoft.Extensions.Logging", "Microsoft.Extensions.Logging.Abstractions", "ILogger", "SeriLog" ],
+    "tags": [ "Microsoft.Extensions.Logging", "Microsoft.Extensions.Logging.Abstractions", "ILogger", "SeriLog", "EventLog", "EventID" ],
     "owners": [ "malzma" ],
     "releaseNotes": "Added overloads for excpetion and params only logging (without message string), fixed cases of NullReferenceExceptions when passing nulls directly to params object[] args",
     "iconUrl": "https://raw.githubusercontent.com/it2media/Home/master/Logo_IT2media_2015_64x64.png",
