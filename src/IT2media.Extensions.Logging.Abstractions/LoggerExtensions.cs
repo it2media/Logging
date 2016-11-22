@@ -22,13 +22,27 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void LogDebug(this ILogger logger, Exception exception, string message, params object[] args)
         {
+            int hashCode = 0;
+
             if (message == null)
             {
-                logger.LogDebug(0, exception, string.Empty, args);
+                if (exception != null && exception.Message != null)
+                {
+                    hashCode = exception.Message.GetHashCodeUShort();
+                }
             }
             else
             {
-                logger.LogDebug(message.GetHashCodeUShort(), exception, message, args);
+                hashCode = message.GetHashCodeUShort();
+            }
+
+            if (args == null)
+            {
+                logger.LogDebug(hashCode, exception, string.Empty);
+            }
+            else
+            {
+                logger.LogDebug(hashCode, exception, string.Empty, args);
             }
         }
 
@@ -36,19 +50,25 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// Formats and writes a debug log message.
         /// </summary>
         /// <param name="logger">The <see cref="ILogger"/> to write to.</param>
-        /// <param name="message">Format string of the log message.</param>
+        /// <param name="exception">The exception to log.</param>
         /// <param name="args">An object array that contains zero or more objects to format.</param>
-        //public static void LogDebug(this ILogger logger, string message, params object[] args)
-        //{
-        //    if (message == null)
-        //    {
-        //        logger.LogDebug(0, string.Empty, args);
-        //    }
-        //    else
-        //    {
-        //        logger.LogDebug(message.GetHashCodeUShort(), message, args);
-        //    }
-        //}
+        public static void LogDebug(this ILogger logger, Exception exception, params object[] args)
+        {
+            int hashCode = 0;
+            if (exception != null && exception.Message != null) //currently this is not the case, but with different .NET Frameworks and Mono-Implementations we can't be sure, so let's do this safe
+            {
+                hashCode = exception.Message.GetHashCodeUShort();
+            }
+
+            if (args == null)
+            {
+                logger.LogDebug(hashCode, exception, string.Empty);
+            }
+            else
+            {
+                logger.LogDebug(hashCode, exception, string.Empty, args);
+            }
+        }
 
         //------------------------------------------TRACE------------------------------------------//
 
