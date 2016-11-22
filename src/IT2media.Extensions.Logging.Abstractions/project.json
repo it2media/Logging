@@ -2,7 +2,7 @@
   "title": "IT2media.Extensions.Logging.Abstractions",
   "copyright": "IT2media GmbH & Co. KG 2016",
   "description": "Extension methods for Microsoft.Extensions.Logging Microsoft.Extensions.Logging.Abtractions ILogger. Use LogDebug, LogTrace, LogInformation, LogWarning, LogError, LogCritical without paramater EventID. The EventID is generated automatically by the GetHashCodeUShort() extension for strings based on the message string.",
-  "version": "1.0.0-*",
+  "version": "1.0.1-*",
   "authors": [ "Markus Malz" ],
   "packOptions": {
     "summary": "Some extension methods for Microsoft.Extensions.Logging Microsoft.Extensions.Logging.Abtractions ILogger",
