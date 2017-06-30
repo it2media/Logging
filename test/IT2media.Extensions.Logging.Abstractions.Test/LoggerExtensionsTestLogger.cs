@@ -12,7 +12,6 @@ namespace IT2media.Extensions.Logging.Abstractions.Test
 
         public IDisposable BeginScope<TState>(TState state)
         {
-            //throw new NotImplementedException();
             return null;
         }
 
@@ -23,7 +22,7 @@ namespace IT2media.Extensions.Logging.Abstractions.Test
 
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
         {
-            LoggerExtensionsTestLogEntry testLogEntry = new LoggerExtensionsTestLogEntry(logLevel, eventId, state, exception);
+            var testLogEntry = new LoggerExtensionsTestLogEntry(logLevel, eventId, state, exception);
 
             LogEntries.Add(testLogEntry);
         }

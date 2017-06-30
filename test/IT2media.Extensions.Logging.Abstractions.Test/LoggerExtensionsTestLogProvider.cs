@@ -15,7 +15,7 @@ namespace IT2media.Extensions.Logging.Abstractions.Test
 
         public void Dispose()
         {
-            //throw new NotImplementedException();
+            
         }
     }
 }
