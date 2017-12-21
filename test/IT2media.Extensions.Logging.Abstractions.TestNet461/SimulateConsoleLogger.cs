@@ -1,28 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 
 namespace IT2media.Extensions.Logging.Abstractions.TestNet461
 {
+    [SuppressMessage("ReSharper", "RedundantAssignment")]
     public class SimulateConsoleLogger : ILogger
     {
-        private static readonly string _loglevelPadding = ": ";
-        private static readonly string _messagePadding;
-        private static readonly string _newLineWithMessagePadding;
+        private static readonly string LoglevelPadding = ": ";
+        private static readonly string MessagePadding;
+        private static readonly string NewLineWithMessagePadding;
 
         [ThreadStatic]
         private static StringBuilder _logBuilder;
 
-        private readonly ConsoleColor? DefaultConsoleColor = null;
+        private readonly ConsoleColor? _defaultConsoleColor = null;
 
         static SimulateConsoleLogger()
         {
             var logLevelString = GetLogLevelString(LogLevel.Information);
-            _messagePadding = new string(' ', logLevelString.Length + _loglevelPadding.Length);
-            _newLineWithMessagePadding = Environment.NewLine + _messagePadding;
+            MessagePadding = new string(' ', logLevelString.Length + LoglevelPadding.Length);
+            NewLineWithMessagePadding = Environment.NewLine + MessagePadding;
         }
 
 
@@ -64,7 +63,7 @@ namespace IT2media.Extensions.Logging.Abstractions.TestNet461
                 case LogLevel.Trace:
                     return new ConsoleColors(ConsoleColor.Gray, ConsoleColor.Black);
                 default:
-                    return new ConsoleColors(DefaultConsoleColor, DefaultConsoleColor);
+                    return new ConsoleColors(_defaultConsoleColor, _defaultConsoleColor);
             }
         }
 
@@ -88,7 +87,7 @@ namespace IT2media.Extensions.Logging.Abstractions.TestNet461
             logLevelColors = GetLogLevelConsoleColors(logLevel);
             logLevelString = GetLogLevelString(logLevel);
             // category and event id
-            logBuilder.Append(_loglevelPadding);
+            logBuilder.Append(LoglevelPadding);
             logBuilder.Append(logName);
             logBuilder.Append("[");
             logBuilder.Append(eventId);
@@ -100,11 +99,11 @@ namespace IT2media.Extensions.Logging.Abstractions.TestNet461
             if (!string.IsNullOrEmpty(message))
             {
                 // message
-                logBuilder.Append(_messagePadding);
+                logBuilder.Append(MessagePadding);
 
                 var len = logBuilder.Length;
                 logBuilder.AppendLine(message);
-                logBuilder.Replace(Environment.NewLine, _newLineWithMessagePadding, len, message.Length);
+                logBuilder.Replace(Environment.NewLine, NewLineWithMessagePadding, len, message.Length);
             }
 
             // Example:
@@ -124,7 +123,7 @@ namespace IT2media.Extensions.Logging.Abstractions.TestNet461
                     new LogMessageEntry()
                 {
                     Message = logBuilder.ToString(),
-                    MessageColor = DefaultConsoleColor,
+                    MessageColor = _defaultConsoleColor,
                     LevelString = hasLevel ? logLevelString : null,
                     LevelBackground = hasLevel ? logLevelColors.Background : null,
                     LevelForeground = hasLevel ? logLevelColors.Foreground : null
