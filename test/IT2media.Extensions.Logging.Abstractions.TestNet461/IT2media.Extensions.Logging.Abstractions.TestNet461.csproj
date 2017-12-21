@@ -83,7 +83,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LoggerExtensionsTest.cs" />
+    <Compile Include="LogMessageEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimulateConsoleLogger.cs" />
+    <Compile Include="SimulateConsoleLoggerProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
