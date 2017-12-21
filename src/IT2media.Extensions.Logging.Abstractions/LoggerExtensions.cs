@@ -22,7 +22,7 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void LogDebug(this ILogger logger, Exception exception, string message, params object[] args)
         {
-            int hashCode = 0;
+            var hashCode = 0;
             hashCode = GetHashCode(ref message, exception, hashCode);
 
             if (args == null)
@@ -43,16 +43,16 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void LogDebug(this ILogger logger, Exception exception, params object[] args)
         {
-            int hashCode = 0;
+            var hashCode = 0;
             hashCode = GetHashCodeFromException(exception, hashCode);
 
             if (args == null)
             {
-                logger.LogDebug(hashCode, exception, string.Empty);
+                logger.LogDebug(hashCode, exception, TryGetMessage(exception));
             }
             else
             {
-                logger.LogDebug(hashCode, exception, string.Empty, args);
+                logger.LogDebug(hashCode, exception, TryGetMessage(exception), args);
             }
         }
 
@@ -67,7 +67,7 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void LogTrace(this ILogger logger, Exception exception, string message, params object[] args)
         {
-            int hashCode = 0;
+            var hashCode = 0;
             hashCode = GetHashCode(ref message, exception, hashCode);
 
             if (args == null)
@@ -88,16 +88,16 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void LogTrace(this ILogger logger, Exception exception, params object[] args)
         {
-            int hashCode = 0;
+            var hashCode = 0;
             hashCode = GetHashCodeFromException(exception, hashCode);
 
             if (args == null)
             {
-                logger.LogTrace(hashCode, exception, string.Empty);
+                logger.LogTrace(hashCode, exception, TryGetMessage(exception));
             }
             else
             {
-                logger.LogTrace(hashCode, exception, string.Empty, args);
+                logger.LogTrace(hashCode, exception, TryGetMessage(exception), args);
             }
         }
 
@@ -112,7 +112,7 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void LogInformation(this ILogger logger, Exception exception, string message, params object[] args)
         {
-            int hashCode = 0;
+            var hashCode = 0;
             hashCode = GetHashCode(ref message, exception, hashCode);
 
             if (args == null)
@@ -133,16 +133,16 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void LogInformation(this ILogger logger, Exception exception, params object[] args)
         {
-            int hashCode = 0;
+            var hashCode = 0;
             hashCode = GetHashCodeFromException(exception, hashCode);
 
             if (args == null)
             {
-                logger.LogInformation(hashCode, exception, string.Empty);
+                logger.LogInformation(hashCode, exception, TryGetMessage(exception));
             }
             else
             {
-                logger.LogInformation(hashCode, exception, string.Empty, args);
+                logger.LogInformation(hashCode, exception, TryGetMessage(exception), args);
             }
         }
 
@@ -157,7 +157,7 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void LogWarning(this ILogger logger, Exception exception, string message, params object[] args)
         {
-            int hashCode = 0;
+            var hashCode = 0;
             hashCode = GetHashCode(ref message, exception, hashCode);
 
             if (args == null)
@@ -178,16 +178,16 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void LogWarning(this ILogger logger, Exception exception, params object[] args)
         {
-            int hashCode = 0;
+            var hashCode = 0;
             hashCode = GetHashCodeFromException(exception, hashCode);
 
             if (args == null)
             {
-                logger.LogWarning(hashCode, exception, string.Empty);
+                logger.LogWarning(hashCode, exception, TryGetMessage(exception));
             }
             else
             {
-                logger.LogWarning(hashCode, exception, string.Empty, args);
+                logger.LogWarning(hashCode, exception, TryGetMessage(exception), args);
             }
         }
 
@@ -202,7 +202,7 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void LogError(this ILogger logger, Exception exception, string message, params object[] args)
         {
-            int hashCode = 0;
+            var hashCode = 0;
             hashCode = GetHashCode(ref message, exception, hashCode);
 
             if (args == null)
@@ -223,16 +223,16 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void LogError(this ILogger logger, Exception exception, params object[] args)
         {
-            int hashCode = 0;
+            var hashCode = 0;
             hashCode = GetHashCodeFromException(exception, hashCode);
 
             if (args == null)
             {
-                logger.LogError(hashCode, exception, string.Empty);
+                logger.LogError(hashCode, exception, TryGetMessage(exception));
             }
             else
             {
-                logger.LogError(hashCode, exception, string.Empty, args);
+                logger.LogError(hashCode, exception, TryGetMessage(exception), args);
             }
         }
 
@@ -247,7 +247,7 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void LogCritical(this ILogger logger, Exception exception, string message, params object[] args)
         {
-            int hashCode = 0;
+            var hashCode = 0;
             hashCode = GetHashCode(ref message, exception, hashCode);
 
             if (args == null)
@@ -268,16 +268,16 @@ namespace IT2media.Extensions.Logging.Abstractions
         /// <param name="args">An object array that contains zero or more objects to format.</param>
         public static void LogCritical(this ILogger logger, Exception exception, params object[] args)
         {
-            int hashCode = 0;
+            var hashCode = 0;
             hashCode = GetHashCodeFromException(exception, hashCode);
 
             if (args == null)
             {
-                logger.LogCritical(hashCode, exception, string.Empty);
+                logger.LogCritical(hashCode, exception, TryGetMessage(exception));
             }
             else
             {
-                logger.LogCritical(hashCode, exception, string.Empty, args);
+                logger.LogCritical(hashCode, exception, TryGetMessage(exception), args);
             }
         }
 
@@ -322,5 +322,10 @@ namespace IT2media.Extensions.Logging.Abstractions
         }
 
         #endregion
+        
+        private static string TryGetMessage(Exception exception)
+        {
+            return exception?.Message ?? string.Empty;
+        }
     }
 }
