@@ -1,14 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>Extension methods for Microsoft.Extensions.Logging Microsoft.Extensions.Logging.Abtractions ILogger. Use LogDebug, LogTrace, LogInformation, LogWarning, LogError, LogCritical without paramater EventID. The EventID is generated automatically by the GetHashCodeUShort() extension for strings based on the message or excpetion message string. Log with exceptions and params only without string message.</Description>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+	<SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>IT2media.Extensions.Logging.Abstractions.snk</AssemblyOriginatorKeyFile>
+	
+	<Description>Extension methods for Microsoft.Extensions.Logging Microsoft.Extensions.Logging.Abtractions ILogger. Use LogDebug, LogTrace, LogInformation, LogWarning, LogError, LogCritical without paramater EventID. The EventID is generated automatically by the GetHashCodeUShort() extension for strings based on the message or excpetion message string. Log with exceptions and params only without string message.</Description>
     <Copyright>IT2media GmbH &amp; Co. KG 2017</Copyright>
-    <AssemblyTitle>IT2media.Extensions.Logging.Abstractions</AssemblyTitle>
-    <VersionPrefix>1.0.1</VersionPrefix>
-    <Authors>Markus Malz</Authors>
-    <TargetFramework>netstandard1.1</TargetFramework>
+    <Summary>Extension methods for Microsoft.Extensions.Logging</Summary>
+    
+    <Authors>Markus Malz</Authors>    
     <AssemblyName>IT2media.Extensions.Logging.Abstractions</AssemblyName>
-    <PackageId>IT2media.Extensions.Logging.Abstractions</PackageId>
+	
     <PackageTags>Microsoft.Extensions.Logging;Microsoft.Extensions.Logging.Abstractions;ILogger;SeriLog;EventLog;EventID</PackageTags>
     <PackageReleaseNotes>Added overloads for exception and params only logging (without message string), fixed cases of NullReferenceExceptions when passing nulls directly to params object[] args</PackageReleaseNotes>
     <PackageIconUrl>https://raw.githubusercontent.com/it2media/Home/master/Logo_IT2media_2015_64x64.png</PackageIconUrl>
@@ -17,19 +20,14 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/it2media/Logging.git</RepositoryUrl>
-    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
-    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
-    <Version>1.0.3</Version>
+	
+    <Version>2.0.0</Version>
+	
   </PropertyGroup>
-
+  
   <ItemGroup>
-    <PackageReference Include="IT2media.Extensions.String" Version="1.0.2" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="1.1.2" />
+    <PackageReference Include="IT2media.Extensions.String" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="2.0.0" />
   </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.1' ">
-    <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
-  </ItemGroup>
-
+  
 </Project>
