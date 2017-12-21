@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using IT2media.Extensions.Logging.Abstractions;
 using Xunit;
 
 namespace IT2media.Extensions.Logging.Abstractions.Test
