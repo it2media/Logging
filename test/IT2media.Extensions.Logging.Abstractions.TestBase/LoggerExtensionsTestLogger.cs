@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 
-namespace IT2media.Extensions.Logging.Abstractions.Test
+namespace IT2media.Extensions.Logging.Abstractions.TestBase
 {
     public class LoggerExtensionsTestLogger : ILogger
     {

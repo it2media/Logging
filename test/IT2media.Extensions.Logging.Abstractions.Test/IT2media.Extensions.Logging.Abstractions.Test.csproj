@@ -15,4 +15,8 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IT2media.Extensions.Logging.Abstractions.TestBase\IT2media.Extensions.Logging.Abstractions.TestBase.csproj" />
+  </ItemGroup>
+
 </Project>
